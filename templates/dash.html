@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Registration Successful</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        135deg,
+        #dbeafe,
+        #bfdbfe,
+        #93c5fd
+    );
+}
+
+.box{
+    background:white;
+    width:700px;
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+.icon{
+    font-size:80px;
+    margin-bottom:15px;
+}
+
+h1{
+    color:#2563eb;
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.success{
+    color:#16a34a;
+    font-size:30px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.message{
+    color:#555;
+    font-size:22px;
+    line-height:1.6;
+}
+
+.name{
+    color:#2563eb;
+    font-weight:bold;
+}
+
+.home-btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 35px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.home-btn:hover{
+    background:#1d4ed8;
+}
+
+.footer{
+    margin-top:25px;
+    color:#777;
+    font-size:14px;
+}
+
+
+.success-card{
+    background:#f8fafc;
+    padding:25px;
+    border-radius:15px;
+    margin:25px 0;
+    border-left:5px solid #2563eb;
+}
+
+.success-card h2{
+    color:#16a34a;
+    margin-bottom:10px;
+}
+
+.success-card h3{
+    color:#1e3a8a;
+    margin-bottom:15px;
+}
+
+.quote{
+    background:#eff6ff;
+    color:#2563eb;
+    padding:18px;
+    border-radius:12px;
+    font-style:italic;
+    margin-bottom:25px;
+}
+
+.home-btn{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:14px 30px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.home-btn:hover{
+    background:#1d4ed8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Welcome To CareBridge Foundation</h1>
+
+    <p class="tagline">
+        Together We Can Build Hope, Inspire Change & Transform Lives
+    </p>
+
+    <div class="success-card">
+
+        <h2>🎉 Registration Successful!</h2>
+
+        <h2>Hello, {{ name }} 👋</h2>
+
+        <p>
+            Thank you for registering as a volunteer with
+            <strong>CareBridge Foundation</strong>.
+        </p>
+
+        <p>
+            Your support will help us create a positive impact through
+            education, healthcare, food assistance, environmental awareness,
+            and community development programs.
+        </p>
+
+    </div>
+
+    <div class="quote">
+        🍁 "Small Acts Of Kindness Create Big Changes In The World."
+    </div>
+
+    <a href="/" class="home-btn">
+        🏠 Explore Our Website
+    </a>
+
+</div>
+</body>
+</html>
