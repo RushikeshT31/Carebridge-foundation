@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NGO Admin Dashboard</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#dbeafe,#e0f2fe);
+    min-height:100vh;
+}
+
+.header{
+    background:linear-gradient(90deg,#2563eb,#1d4ed8);
+    color:white;
+    text-align:center;
+    padding:25px;
+    position:relative;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+.header h1{
+    font-size:32px;
+}
+
+.logout{
+    position:absolute;
+    top:25px;
+    right:30px;
+}
+
+.logout a{
+    text-decoration:none;
+    color:white;
+    background:#ef4444;
+    padding:10px 18px;
+    border-radius:8px;
+}
+
+.logout a:hover{
+    background:#dc2626;
+}
+
+.container{
+    width:90%;
+    margin:30px auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    margin-bottom:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.section-title{
+    color:#2563eb;
+    border-left:6px solid #2563eb;
+    padding-left:12px;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    margin-bottom:15px;
+    font-size:15px;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#2563eb;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table th{
+    background:#2563eb;
+    color:white;
+    padding:14px;
+}
+
+table td{
+    padding:12px;
+    border:1px solid #ddd;
+}
+
+table tr:nth-child(even){
+    background:#f8fafc;
+}
+
+.no-data{
+    text-align:center;
+    padding:15px;
+    background:#f8fafc;
+    border:1px dashed #ccc;
+    border-radius:8px;
+    margin-top:15px;
+    color:#666;
+}
+
+.action-buttons{
+    margin-top:10px;
+}
+
+.clear-btn{
+    display:inline-block;
+    background:#ef4444;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-left:10px;
+    transition:0.3s;
+}
+
+.clear-btn:hover{
+    background:#dc2626;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>🤝 NGO Admin Dashboard</h1>
+
+<div class="logout">
+<a href="/logout">Logout</a>
+</div>
+
+</div>
+
+<div class="container">
+
+<!-- OUR STORY -->
+
+<div class="card">
+
+<h2 class="section-title">📖 Our Story</h2>
+
+<form action="/add_story" method="POST">
+
+    <textarea
+    name="content"
+    rows="5"
+    placeholder="Enter NGO Story"
+    required></textarea>
+
+    <div class="btn-group">
+        <button type="submit">Save Story</button>
+
+        <a href="/clear_story" class="clear-btn">
+            Clear Story Data
+        </a>
+    </div>
+
+</form>
+
+{% if story %}
+<table>
+<tr>
+<th>ID</th>
+<th>Story</th>
+</tr>
+
+{% for s in story %}
+<tr>
+<td>{{ s.id }}</td>
+<td>{{ s.content }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% else %}
+<div class="no-data">No Story Added Yet</div>
+{% endif %}
+
+</div>
+
+
+<!-- CORE VALUES -->
+
+<div class="card">
+
+<h2 class="section-title">⭐ Core Values</h2>
+
+<form action="/add_value" method="POST">
+
+<input
+type="text"
+name="value"
+placeholder="Enter Core Value"
+required>
+
+<button type="submit">Save Value</button>
+<a href="/clear_values" class="clear-btn">
+    Clear Values Data
+</a>
+
+
+</form>
+
+{% if values %}
+<table>
+<tr>
+<th>ID</th>
+<th>Value</th>
+</tr>
+
+{% for v in values %}
+<tr>
+<td>{{ v.id }}</td>
+<td>{{ v.value }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% else %}
+<div class="no-data">No Core Values Added Yet</div>
+{% endif %}
+
+</div>
+
+
+<!-- PROGRAMS -->
+
+<div class="card">
+
+<h2 class="section-title">📚 Programs</h2>
+
+<form action="/add_program" method="POST">
+
+<input
+type="text"
+name="name"
+placeholder="Program Name"
+required>
+
+<button type="submit">Save Program</button>
+<a href="/clear_programs" class="clear-btn">
+    Clear Programs Data
+</a>
+
+</form>
+
+{% if programs %}
+<table>
+<tr>
+<th>ID</th>
+<th>Program Name</th>
+</tr>
+
+{% for p in programs %}
+<tr>
+<td>{{ p.id }}</td>
+<td>{{ p.name }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% else %}
+<div class="no-data">No Programs Added Yet</div>
+{% endif %}
+
+</div>
+
+
+<!-- TEAM MEMBERS -->
+
+<div class="card">
+
+<h2 class="section-title">👥 Team Members</h2>
+
+<form action="/add_team" method="POST">
+
+<input
+type="text"
+name="name"
+placeholder="Member Name"
+required>
+
+<input
+type="text"
+name="role"
+placeholder="Member Role"
+required>
+
+<button type="submit">Save Member</button>
+
+<a href="/clear_team" class="clear-btn">Clear Team Data</a>
+
+</form>
+
+{% if team %}
+<table>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Role</th>
+</tr>
+
+{% for t in team %}
+<tr>
+<td>{{ t.id }}</td>
+<td>{{ t.name }}</td>
+<td>{{ t.role }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% else %}
+<div class="no-data">No Team Members Added Yet</div>
+{% endif %}
+
+</div>
+
+</div>
+
+</body>
+</html>
