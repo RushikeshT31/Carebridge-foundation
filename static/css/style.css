@@ -85,6 +85,17 @@ nav ul li a:hover{
    HERO SECTION
 =================================== */
 
+.hero{
+    background:
+    linear-gradient(rgba(0,0,0,.55),
+    rgba(0,0,0,.55)),
+    url("../images/hero.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
 .hero-buttons{
     display:flex;
     justify-content:center;
