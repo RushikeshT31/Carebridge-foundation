@@ -601,3 +601,79 @@ footer{
         text-align:center;
     }
 }
+/* HERO CONTENT */
+
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+    ),
+    url("../images/hero.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.hero-content{
+    color:#ffffff;
+    z-index:2;
+}
+
+.hero-content h1{
+    font-size:5rem;
+    font-weight:800;
+    color:#ffffff;
+    text-shadow:3px 3px 10px rgba(0,0,0,0.8);
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:1.8rem;
+    color:#ffffff;
+    text-shadow:2px 2px 8px rgba(0,0,0,0.8);
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 38px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:700;
+    color:white;
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:#f59e0b;
+}
+
+.btn-primary:hover{
+    background:#d97706;
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    background:#2563eb;
+}
+
+.btn-secondary:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
