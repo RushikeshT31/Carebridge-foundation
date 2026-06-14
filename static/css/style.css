@@ -85,58 +85,43 @@ nav ul li a:hover{
    HERO SECTION
 =================================== */
 
-.hero{
-    height:75vh;
-    background:
-    linear-gradient(rgba(0,0,0,.65),
-    rgba(0,0,0,.65)),
-    url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c");
-
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
-
-.hero-content{
-    color:white;
-    max-width:900px;
-    padding:20px;
-}
-
-.hero-content h1{
-    font-size:4rem;
-    line-height:1.2;
-    margin-bottom:15px;
-}
-
-.hero-content h2{
-    font-size:1.8rem;
-    margin-bottom:15px;
-    color:#fbbf24;
-}
-
-.hero-content p{
-    font-size:1.2rem;
-    margin-bottom:25px;
-}
 .hero-buttons{
     display:flex;
     justify-content:center;
-    gap:15px;
+    gap:20px;
+    margin-top:30px;
     flex-wrap:wrap;
 }
 
-.hero-buttons a{
-    padding:12px 28px;
-    border-radius:40px;
+.btn{
     text-decoration:none;
-    font-size:1rem;
+    padding:14px 30px;
+    border-radius:50px;
+    font-size:18px;
     font-weight:600;
+    transition:0.3s;
+    display:inline-block;
 }
 
+.btn-primary{
+    background:#f59e0b;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#d97706;
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    background:#2563eb;
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
 
 /* ===================================
    COMMON SECTION
