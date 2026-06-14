@@ -22,9 +22,6 @@ body{
 /* ===================================
    NAVBAR
 =================================== */
-/* ===================================
-   NAVBAR
-=================================== */
 
 nav{
     background:#0f172a;
@@ -85,53 +82,44 @@ nav ul li a:hover{
    HERO SECTION
 =================================== */
 
+/* ===================================
+   HERO SECTION
+=================================== */
+
 .hero{
+    height:85vh;
+
     background:
-    linear-gradient(rgba(0,0,0,.55),
-    rgba(0,0,0,.55)),
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
     url("../images/hero.jpg");
 
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
-}
 
-.hero-buttons{
     display:flex;
     justify-content:center;
-    gap:20px;
-    margin-top:30px;
-    flex-wrap:wrap;
+    align-items:center;
+    text-align:center;
 }
 
-.btn{
-    text-decoration:none;
-    padding:14px 30px;
-    border-radius:50px;
-    font-size:18px;
-    font-weight:600;
-    transition:0.3s;
-    display:inline-block;
-}
-
-.btn-primary{
-    background:#f59e0b;
+.hero-content{
     color:white;
+    max-width:900px;
+    padding:20px;
 }
 
-.btn-primary:hover{
-    background:#d97706;
-    transform:translateY(-3px);
+.hero-content h1{
+    font-size:4rem;
+    margin-bottom:20px;
 }
 
-.btn-secondary{
-    background:#2563eb;
-    color:white;
-}
-
-.btn-secondary:hover{
-    background:#1d4ed8;
-    transform:translateY(-3px);
+.hero-content p{
+    font-size:1.3rem;
+    margin-bottom:30px;
 }
 
 /* ===================================
